@@ -20,23 +20,29 @@ Open [http://localhost:8000](http://localhost:8000) in a browser.
 
 ## Deploy with GitHub Pages
 
-Replace `YOUR_USERNAME` with your GitHub username:
+This project is deployed from the `HJ9002/Task5.github.io` repository.
+
+To publish changes from the project folder:
 
 ```bash
-git init
 git add .
-git commit -m "Create static portfolio website"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
+git commit -m "Update portfolio website"
 git push -u origin main
 ```
 
-Create a public repository named `YOUR_USERNAME.github.io` before running the commands above. GitHub Pages will normally publish the site automatically from the `main` branch. If it does not, open the repository's **Settings > Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
+To enable GitHub Pages with the GitHub CLI, authenticate first with `gh auth login`, then run:
 
-Your live URL will be:
+```bash
+gh api --method POST repos/HJ9002/Task5.github.io/pages `
+  -f "source[branch]=main" -f "source[path]=/"
+```
+
+If Pages is already enabled, use the repository's **Settings > Pages** page instead and choose **Deploy from a branch**, `main`, and `/ (root)`.
+
+The live URL is:
 
 ```text
-https://YOUR_USERNAME.github.io
+https://hj9002.github.io/Task5.github.io/
 ```
 
 ## Customization
